@@ -16,7 +16,7 @@ import type { Product } from '@/types/models/Product'
 
 const tableData: Ref<Product[]> = ref([])
 const filteredData: Ref<Product[]> = ref([])
-const showNoProductsFound = computed(() => tableData.value.length === 0)
+const showNoProductsFound = computed(() => filteredData.value.length === 0)
 
 const productService: ProductService = new ProductService()
 const formattedAvailableUnits: Function = (availableUnits: number): string =>
@@ -173,7 +173,7 @@ table.table {
       content: '';
       position: absolute;
       top: 50%;
-      right: 0%;
+      right: 0;
       transform: translate(0, -50%);
       width: 1px;
       height: 20px;
